@@ -20,7 +20,7 @@ class EtudiantFactory extends Factory
         return [
             'nom' => fake()->name(),
             'adresse' => $this->faker->address,
-            'telephone' => $this->faker->sentence,
+            'telephone' => $this->faker->phoneNumber,
             'email' => fake()->unique()->safeEmail(),
             'date_de_naissance' => $this->faker->date(),
             'ville_id' => Ville::inRandomOrder()->first()->id,
