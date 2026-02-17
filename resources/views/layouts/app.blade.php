@@ -9,13 +9,20 @@
 </head>
 
 <body class="d-flex flex-column min-vh-100">
-    <header>
-        <ul class="nav justify-content-center">
+    <header class="bg-light py-4 mb-4 shadow-sm">
+        <ul class="nav justify-content-center fs-4">
+
             <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="{{ route('etudiant.index') }}">Etudiants</a>
+                <a class="nav-link pb-2 {{ request()->routeIs('etudiant.index') ? 'active text-decoration-underline link-offset-2' : '' }}"
+                    href="{{ route('etudiant.index') }}">
+                    Etudiants
+                </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('etudiant.create') }}">Nouveau</a>
+                <a class="nav-link pb-2 {{ request()->routeIs('etudiant.create') ? 'active text-decoration-underline link-offset-2' : '' }}"
+                    href="{{ route('etudiant.create') }}">
+                    Nouveau
+                </a>
             </li>
         </ul>
     </header>
@@ -28,7 +35,7 @@
         @endif
         @yield('content')
     </div>
-    <footer class="bg-light text-center py-3 mt-5 border-top">
+    <footer class="bg-light text-center py-3 mt-auto border-top">
         <div class="container">
             <small class="text-muted">
                 © 2026 Maisonneuve — Tous droits réservés

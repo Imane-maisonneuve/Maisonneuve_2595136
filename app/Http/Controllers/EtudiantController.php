@@ -64,7 +64,8 @@ class EtudiantController extends Controller
      */
     public function show(Etudiant $etudiant)
     {
-        return view('etudiant.show', ['etudiant' => $etudiant]);
+        $villes = Ville::all();
+        return view('etudiant.show', ['etudiant' => $etudiant, 'villes' => $villes]);
     }
 
     /**
